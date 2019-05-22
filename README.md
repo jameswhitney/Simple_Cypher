@@ -1,4 +1,5 @@
 # Simple_Cypher
-This script will encrypt then decrypt a string using a
-Ceaser Cypher.
+## Simple Encryption using a Ceaser Cypher
+The Simple_Cypher_Encrypt.py file contains functions that encrpyt and decrypt
+a string message using a Ceaser Cypher.
  
