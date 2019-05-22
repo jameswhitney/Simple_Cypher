@@ -27,3 +27,27 @@ def encrypt(message, shift_value):
 
     shifted_alphabet = second_half + first_half
 
+    # Iterate throught the original message one character at a time.
+    # Then assign original alphabet indices to shifted alphabet in order
+    # to create an encrypted message based on a Ceaser Cypher
+
+    for i, char in enumerate(message.lower()):
+
+        # Check to see if a character is part of the alphabet.
+        # If a character is not part of the alphabet simply
+        # add it to the encrypted phrase.
+
+        if char in alphabet:
+
+            # Assign each index for the original alphabet to a variable
+            # and then map the original indices to the shifted alphabet
+            # to complete the encryption phase
+
+            original_index = alphabet.index(char)
+            encrypted_message[i] = shifted_alphabet[original_index]
+        
+        else:
+            # If char is not in alphabet simply assign the character to the encrypted message
+            encrypted_message[i] = char
+
+    return ''.join(encrypted_message)
