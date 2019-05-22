@@ -28,3 +28,22 @@ def decrypt(message, shift_value):
     # Create shifted alphabet by concatenating the second_half of the alphabet
     # with the first_half of the alphabet
     shifted_alphabet = second_half + first_half
+
+    # Iterate over the message string to get the index and characters
+    # within the message string
+    for i, char in enumerate(message.lower()):
+
+        # If the character is part of the alphabet
+        # add it to the decrypted phrase array.
+        # If character is not part of the alphabet, add it
+        # to the decrypted message.
+        if char in alphabet:
+
+            shifted_index = shifted_alphabet.index(char)
+            decrypted_message[i] = alphabet[shifted_index]
+
+        else:
+
+            decrypted_message[i] = char
+
+    return ''.join(decrypted_message)
