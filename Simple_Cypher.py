@@ -53,10 +53,10 @@ def encrypt(message, shift_value):
     return ''.join(encrypted_message)
 
 
-############################################
-# This file decrypts the encrypted message #
-# from the Simple_Cypher_Encrypt file      #
-############################################
+################################################
+# This function decrypts the encrypted message #
+# from the Simple_Cypher_Encrypt file          #
+################################################
 
 
 def decrypt(message, shift_value):
@@ -122,3 +122,25 @@ def brute_force_decryption(message):
         print('Using shift value: {}'.format(n))
         print(decrypt(message, n))
         print('\n')
+
+def test():
+    message = 'get to the chopper'
+    shift_value = 13
+
+    encrypted_phrase = encrypt(message, shift_value)
+    print("The unencrypted phrase is: '{}' and the shift_value is: {}.".format(message, shift_value))
+    print("The encrypted version of the phrase is: '{}'".format(encrypted_phrase))
+    print('------- --------- ---------')
+    print('\n')
+
+    decrypted_phrase = decrypt(encrypted_phrase, 13)
+    print("Before decryption the phrase is: '{}' and the shift_value is {}.".format(encrypted_phrase, shift_value))
+    print("After the decryption process the original phrase is: '{}'".format(decrypted_phrase))
+    print('------- --------- ---------')
+    print('\n')
+
+    print("A brute force method is used to decrypted message which should be found at the {} shift_value\n".format(shift_value))
+    brute_force_decryption(encrypted_phrase)
+
+test()
+
